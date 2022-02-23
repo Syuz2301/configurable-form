@@ -1,0 +1,33 @@
+@import '~antd/dist/antd.css';
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+main {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 50px;
+}
+
+#nest-messages {
+  width: 500px !important;
+}
+
+.ant-table-wrapper {
+  width: 1000px !important;
+  border: 1px rgb(202, 198, 198) solid !important;
+  padding: 20px !important;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

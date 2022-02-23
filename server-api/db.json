@@ -1,0 +1,33 @@
+{
+  "configure": [
+    {
+      "id": "1645659322939",
+      "type": "Name",
+      "label": "First Name",
+      "required": true,
+      "visible": true,
+      "rows": 1
+    },
+    {
+      "label": "Last Name",
+      "type": "Name",
+      "required": true,
+      "visible": false,
+      "id": "cQ3FU0e"
+    },
+    {
+      "type": "Link",
+      "label": "Linkedin",
+      "visible": true,
+      "required": true,
+      "id": "ktTISMz"
+    },
+    {
+      "label": "About me",
+      "type": "Text",
+      "rows": 2,
+      "visible": true,
+      "id": "KxGzz-g"
+    }
+  ]
+}
