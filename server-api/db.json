@@ -28,6 +28,14 @@
       "rows": 4,
       "visible": true,
       "id": "KxGzz-g"
+    },
+    {
+      "label": "deed",
+      "type": "Name",
+      "visible": true,
+      "id": "KZh_CJF",
+      "rows": 6,
+      "required": true
     }
   ]
 }

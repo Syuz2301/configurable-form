@@ -37,7 +37,7 @@ const Profile:FC= () => {
             [{required: el.required, message: `Please input your ${el.label}!` }]
           }
           >
-            {el.rows ? <TextArea  autoSize={{ minRows: el.rows}}/> :  <Input />}
+            {(el.rows && el.type==='Text') ? <TextArea  autoSize={{ minRows: el.rows}}/> :  <Input />}
           </Form.Item>
           )
         })}
