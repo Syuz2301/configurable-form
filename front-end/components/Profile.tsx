@@ -18,7 +18,7 @@ const Profile:FC= () => {
   const [form] = Form.useForm();
   const datas = useAppSelector(selectFields);
   const visible = datas.filter(item => item.visible)
-  const onFinish = () => {
+  const onFinish = (): void => {
     message.success('Fields passed the validation');
     form.resetFields();
   };
@@ -51,4 +51,4 @@ const Profile:FC= () => {
   );
 };
 
-export default Profile
+export default Profile;

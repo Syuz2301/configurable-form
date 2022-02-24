@@ -70,12 +70,12 @@ const Fieldstable:FC = () => {
       });
     };
 
-    const onCancel = () => {   
+    const onCancel = (): void => {   
       setFormField(null)  
       setModalVisible(false);
     };
 
-    const onFinish = (item:Field) => {
+    const onFinish = (item:Field): void => {
       const exists = datas.find(el => el.id === item?.id)
       if(exists) {
         dispatch(updateField(item));
@@ -129,7 +129,8 @@ const Fieldstable:FC = () => {
             </Select>
             </Form.Item>
             {formField?.type === 'Text' && 
-            <Form.Item label="Rows"><InputNumber min={1} max={10} value={formField?.rows} onChange={(e) => 
+            <Form.Item label="Rows" name="rows" initialValue={formField?.rows} rules={[{ required: true, message: 'Please select your Rows!' }]}>
+              <InputNumber min={1} max={10} onChange={(e) => 
               setFormField((pre) => {return { ...pre, rows:e}})}/>
             </Form.Item>}
             <Form.Item label="Required">

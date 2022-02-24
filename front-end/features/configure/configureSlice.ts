@@ -36,13 +36,13 @@ export const updateField = createAsyncThunk(
         try {
             const response =  await api.put<Field>(`/configure/${changedField.id}`, changedField);
             return response.data;
-
         } catch(err) {
             console.log(err)
         }
-});
+    }
+);
 
-export const addNewField = createAsyncThunk(
+export const addNewField= createAsyncThunk(
     'configure/addNewField',
     async function(newField:Field) {
         try {
@@ -52,12 +52,12 @@ export const addNewField = createAsyncThunk(
             console.log(err);
         }
     }
-)
+);
 
 
 const handleGetFulfilled = (state, {payload}:PayloadAction<FieldState>) => {
    state.fields = payload;
-}
+};
 
 const configureFields = createSlice({
     name: 'configure',
@@ -73,12 +73,14 @@ const configureFields = createSlice({
             const result = [];
             state.fields.forEach((item) => {
                 if(item.id === payload.id) {
-                    item.type = payload.type
-                    item.label = payload.label
-                    item.required = payload.required
-                    item.visible = payload.visible
-                    if(item.type === 'Text') {
-                        item.rows = payload.rows
+                    item.type = payload.type;
+                    item.label = payload.label;
+                    item.required = payload.required;
+                    item.visible = payload.visible;
+                    if(payload.type === 'Text') {
+                        item.rows = payload.rows;
+                    } else {
+                       delete item.rows;
                     }
                 }
                 result.push(item);
